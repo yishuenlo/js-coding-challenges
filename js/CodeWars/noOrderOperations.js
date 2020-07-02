@@ -6,7 +6,7 @@
 //operation allowed
 //+, -, * , /, ^, %
 
-let input = "6 9* 2+6 /  0"; //1
+let input = "6 9* 2+6 /  0"; //null
 
 //final answer
 function noOrder(input) {
