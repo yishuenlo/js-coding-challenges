@@ -1,6 +1,6 @@
 //https://www.codewars.com/kata/59df2f8f08c6cec835000012
 
-//convert to string, Fred:Corwill = (Corwill, Fred)
+//convert to string, Fred:Corwill = (CORNWILL, FRED)
 //sort alphabetically
 
 //input = string
