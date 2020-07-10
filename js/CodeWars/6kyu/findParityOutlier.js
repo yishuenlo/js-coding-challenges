@@ -10,10 +10,8 @@
 let arr = [2, 4, 0, 100, 4, 11, 2602, 36]; //11
 
 function findOutlier(arr) {
-    //if only one odd filtered out...
-    //return odd filter, else return even filter
-    let isOdd = arr.filter((n) => n % 2);
-  return isOdd.length === 1
-    ? isOdd[0]
-    : arr.filter((n) => n % 2 === 0)[0];
+  //if only one odd filtered out...
+  //return odd filter, else return even filter
+  let isOdd = arr.filter((n) => n % 2);
+  return isOdd.length === 1 ? isOdd[0] : arr.filter((n) => n % 2 === 0)[0];
 }
