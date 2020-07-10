@@ -13,7 +13,7 @@ function meeting(s) {
   return s
     .toUpperCase() //convert to uppercase
     .split(";") //conver to array
-    .map((name) => name.replace(/([A-Z]+):([A-Z]+)/gi, "($2, $1)")) //swap first and last names
+    .map((name) => name.replace(/(\w+):(\w+)/gi, "($2, $1)")) //swap first and last names
     .sort() //sort
     .join(""); //convert to string
 }
