@@ -16,19 +16,19 @@
 
 let str = "&&&&& $$$$$ ^^^^^ @@@@@ ()()()()(";
 
-const word2Hex = (word, letter = 0) => {
-  //establish base case
-  if (letter > 2) return "";
+const word2Hex = (word, index = 0) => {
+  //find hex for the first 3 letters
+  if (index > 2) return "";
 
   //convert letter to hex value, return 00 if no value
-  let hex = word[letter] ? word.charCodeAt(letter).toString(16) : "00";
+  let hex = word[index] ? word.charCodeAt(index).toString(16) : "00";
 
   //call recursively
-  return hex + word2Hex(word, letter + 1);
+  return hex + word2Hex(word, index + 1);
 };
 
 function wordsToHex(words) {
   return words
-    .split(/\s/g) //convert words to array
+    .split(" ") //convert words to array
     .map((word) => "#" + word2Hex(word)); //convert to hex value
 }
