@@ -20,3 +20,9 @@ function solve(arr) {
   return arr;
 }
 
+function solev2(arr) {
+  //remove duplicate with Set
+  //reverse to remove left most number
+  //remove to convert back to orignal order
+  return [...new Set(arr.reverse())].reverse();
+}
