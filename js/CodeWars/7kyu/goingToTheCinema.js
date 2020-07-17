@@ -4,7 +4,7 @@
 //A: buy ticket at $15 every time
 //B: buy $500 gift card, and get 10% off of the price he paid for the previous one - aka, ticket gets cheaper
 
-//how many times John has to go the theater for B to make sense? 
+//how many times John has to go the theater for B to make sense?
 
 //input = card(gift card price), ticket(original price), perc(discount)
 //output = number
@@ -20,31 +20,50 @@ const ticket = 10;
 const perc = 0.95;
 
 const calcPlanB = (ticket, perc, count) => {
-    if(count === 0) return 0;
+  if (count === 0) return 0;
 
-    let cost = ticket * perc;
-    return cost + calcPlanB(ticket * perc, perc, count - 1);
-}
+  let cost = ticket * perc;
+  return cost + calcPlanB(ticket * perc, perc, count - 1);
+};
 
 //while planB is greater than planA, keep incrementing count
 
-//start at breakeven point
-let breakeven = Math.ceil(card / ticket);
+//giftcard breakeven point count
+let cardBreakEven = Math.ceil(card / ticket);
 
-let planA = (breakeven) * ticket;
-let planB = calcPlanB(ticket, perc, breakeven) + card;
+//based on cardBreakeven, how many tickets can planB get
+let breakevenCount = Math.ceil(
+  (Math.ceil(calcPlanB(ticket, perc, cardBreakEven)) + card) / ticket
+);
 
-let extra = calcPlanB(ticket, perc, breakeven) / ticket;
+let planA = ticket * breakevenCount;
+let planB = calcPlanB(ticket, perc, breakevenCount) + card;
 
+while (planA < planB) {
+  breakevenCount++;
+  planA = ticket * breakevenCount;
+  planB = calcPlanB(ticket, perc, breakevenCount) + card;
+}
 
-
-console.log('planA', planA)
-console.log('planB', planB)
-
-
-console.log('breakeven', breakeven);
+console.log("breakevenCount", breakevenCount);
 
 function movie(card, ticket, perc) {
-    let breakeven = Math.ceil(card / ticket);
-    return Math.ceil(calcPlanB(ticket, perc, breakeven) / ticket + breakeven);
-};
+  //giftcard breakeven point count
+  let cardBreakEven = Math.ceil(card / ticket);
+
+  //based on cardBreakeven, how many tickets can planB get
+  let breakevenCount = Math.ceil(
+    (Math.ceil(calcPlanB(ticket, perc, cardBreakEven)) + card) / ticket
+  );
+
+  let planA = ticket * breakevenCount;
+  let planB = calcPlanB(ticket, perc, breakevenCount) + card;
+
+  while (planA < planB) {
+    breakevenCount++;
+    planA = ticket * breakevenCount;
+    planB = calcPlanB(ticket, perc, breakevenCount) + card;
+  }
+
+  return breakevenCount;
+}
