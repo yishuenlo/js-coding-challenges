@@ -20,9 +20,9 @@ const ticket = 10;
 const perc = 0.95;
 
 const calcPlanB = (ticket, perc, count) => {
-  if (count === 0) return 0;
+  if (count <= 0) return 0;
 
-  let cost = ticket * perc;
+  let cost = (ticket * perc);
   return cost + calcPlanB(ticket * perc, perc, count - 1);
 };
 
