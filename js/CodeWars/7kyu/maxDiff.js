@@ -4,6 +4,5 @@
 // output = number
 
 const maxDiff = (arr) => {
-    if(arr.length <= 1) return 0;
-    return(Math.max(...arr) - Math.min(...arr));
+    return arr.length > 1 ? Math.max(...arr) - Math.min(...arr) : 0;
 }
