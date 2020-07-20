@@ -15,21 +15,16 @@
 //if third number is higher than the sum of two minmum, return sum
 //else, return sum of all 3 divided by 2
 
-const chips = [8, 2, 8];
-let sorted = chips.sort((a, b) => a - b);
+const arr = [8, 2, 8];
+const [a, b, c] = arr.sort((a, b) => a - b);
 
-if (sorted[0] + sorted[1] > sorted[3]) {
-  console.log(sorted[0] + sorted[1]);
-}
 
 function solve(arr) {
   //sort chips in ascending order to figure the two smallest num
-  const chips = arr.sort((a, b) => a - b);
-  const twoMins = chips[0] + chips[1];
+  const [lo, mid, hi] = arr.sort((a, b) => a - b);
+  const twoMins = lo + mid;
 
-  //if third number is higher than the sum of two minmum, return sum
+  //if hi is bigger than the sum of two minmums, return sum
   //else, return sum of all 3 divided by 2
-  return twoMins < chips[2]
-    ? twoMins
-    : Math.floor(chips.reduce((a, b) => a + b) / 2);
+  return twoMins < hi ? twoMins : Math.floor(arr.reduce((a, b) => a + b) / 2);
 }
