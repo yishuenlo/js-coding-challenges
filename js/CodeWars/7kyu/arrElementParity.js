@@ -16,5 +16,6 @@ for (let num of arr) {
 }
 
 function solve(arr) {
-  return [...arr].reduce((a, b) => a + b);
+  //find if array does NOT include oppposite number
+  return arr.find((num) => !arr.includes(-num));
 }
