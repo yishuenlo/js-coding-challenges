@@ -1,5 +1,5 @@
 const lang =
-  "Chinese English Spanish English, Korean, Spanish English, Spanish English, Spanish english/spanish English/Spanish English/Spanish French French French French Spanish Hebrew ingles Inglis Italian Portuguese spanish Spanish Spanish Spanish Spanish Spanish spanish Spanish Spanish Spanish Spanish Spanish Spanish spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish English Spanish, Russian Spanish, Russian, English Swedish";
+  "Chinese English Spanish English, Korean, Spanish English, Spanish English, Spanish english/spanish English/Spanish English/Spanish French French French French Spanish Hebrew spanish spanish Italian Portuguese spanish Spanish Spanish Spanish Spanish Spanish spanish Spanish Spanish Spanish Spanish Spanish Spanish spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish Spanish English Spanish, Russian Spanish, Russian, English Swedish";
 
 const arr = lang
   .toLowerCase() //change all to lower case
