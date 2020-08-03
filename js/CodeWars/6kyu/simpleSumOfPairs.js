@@ -35,7 +35,7 @@ console.log("a", a);
 console.log("b", b);
 console.log("total", total);
 
-//use math to main O(1)
+//use math to maintain O(1)
 function solve(n) {
   //figure out how many digits in n and find power of 10
   let digits = Math.pow(10, Math.floor(Math.log10(n)));
