@@ -21,17 +21,19 @@ const count = city
     return obj;
   }, {});
 
+//option 1
+//convert obj to array then to string
 let result = [];
-
 for (let key in count) {
   result.push(`${key}:${count[key]}`);
 }
 
+//option 2
+//convert obj to string
 let str = JSON.stringify(count).replace(/["{}]/g, "");
 
-console.log("count", count);
-console.log(str);
 
+//option 1 function
 function getStrings2(city) {
   //count letters
   const count = city
@@ -57,13 +59,16 @@ function getStrings2(city) {
   return result.join(",");
 }
 
+//option 2 function
+//this option is cleaner
 function getStrings(city) {
   //count letters
   const count = city
-    .replace(/\s*/g, "")
-    .toLowerCase()
-    .split("")
+    .replace(/\s*/g, "") //remove space
+    .toLowerCase() //convert all to lower case
+    .split("") //conver to array
     .reduce((obj, letter) => {
+      //count letters
       if (obj[letter]) {
         obj[letter] = obj[letter] + "*";
       } else {
