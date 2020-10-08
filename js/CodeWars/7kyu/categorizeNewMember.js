@@ -9,17 +9,14 @@ const input = [
   [18, 20],
   [45, 2],
 ];
-// const input = [18, 20];
 
-const output = [];
-
-for (const member of input) {
-  member[0] > 55 && member[1] > 7 ? output.push("senior") : output.push("open");
+const openOrSenior = (data) => {
+  return data.map(([age, handicap]) =>
+    age > 54 && handicap > 7 ? "Senior" : "Open"
+  );
 }
 
-console.log("output", output);
-
-function openOrSenior(data) {
+function openOrSeniorDumb(data) {
   const output = [];
 
   for (const member of data) {
