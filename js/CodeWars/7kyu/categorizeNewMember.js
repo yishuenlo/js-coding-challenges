@@ -20,8 +20,7 @@ function openOrSeniorDumb(data) {
   const output = [];
 
   for (const member of data) {
-    const age = member[0];
-    const handicap = member[1];
+    [age, handicap] = member;
 
     age > 54 && handicap > 7 ? output.push("Senior") : output.push("Open");
   }
