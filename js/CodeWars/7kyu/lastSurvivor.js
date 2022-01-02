@@ -21,6 +21,7 @@ for(const i of arr){
 console.log(str);
 
 function lastSurvivor(str, arr){
+    //loop through array for index
     for(const index of arr){
         str = str.slice(0, index) + str.slice(index + 1);
     }
